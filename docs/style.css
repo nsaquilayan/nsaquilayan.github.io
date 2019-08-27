@@ -23,4 +23,260 @@ Class names in CSS stylesheets begin with a period
         color: blue;
       }
     </style>
+
+To use a non-standard font, you must import it first to use it.
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <style>
+      h2 {
+        font-family: Lobster
+      }
+    </style>
+
+CSS borders have properties like style, color, width, radius
+    <style>
+      .thin-red-border {
+        border-color: red;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 50%;
+      }
+    </style>
+
+You can apply multiple classes to an element using its class attribute, by separating each class name with a space.
+    <img class="class1 class2">
+
+The id attribute: You can use an id to style a single element,
+you can use them to select and modify specific elements with JavaScript.
+    ids should be unique.
+
+An id also has a higher specificity (importance) than a class so if both are applied to the same element
+and have conflicting styles, the styles of the id will be applied
+
+To reference ids put a # in front of their names.
+
+Three important properties control the space that surrounds each HTML element: padding, margin, and border.
+    An element's padding controls the amount of space between the element's content and its border.
+    An element's margin controls the amount of space between an element's border and surrounding elements.
+        If you set an element's margin to a negative value, the element will grow larger.
+    Can pad / margin individual sides by using the following properties:
+        padding-top, padding-right, padding-bottom, and padding-left
+    You can also specify all sides in one line in clockwise order starting from top like so:
+        padding: 10px 20px 10px 20px; (the order is top, right, bottom, left)
+
+Attribute selector:
+    [attr=value]: This selector matches and styles elements with a specific attribute value.
+        [type='radio'] {
+          margin: 20px 0px 20px 0px;
+        }
+
+The order of the class declarations in the <style> section important.
+The second declaration will always take precedence over the first.
+
+Inheritance:
+    !important > inline style > id > class (last one in CSS sheet) > body
+        add the !important keyword in a field to guarantee the element's value will be that value.
+            .pink-text {
+                color: pink !important;
+            }
+
+CSS variables:
+    To create a CSS Variable, you just need to give it a name with two dashes in front of it and assign it a value.
+        --penguin-skin: gray;
+    To use variables:
+        background: var(--penguin-skin);
+        Note: You can add a fallback value if the given variable is invalid.
+            background: var(--penguin-skin, black);
+
+:root
+    Can think of the :root element as a container for the entire HTML document.
+    By creating variables in :root, they will be available throughout the whole web page.
+    When you create your variables in :root they will set the value of that variable for the whole page.
+        You can then over-write these variables by setting them again within a specific element.
+            <style>
+              :root {
+                --penguin-skin: gray;
+                --penguin-belly: pink;
+                --penguin-beak: orange;
+              }
+              body {
+                background: var(--penguin-belly, #c6faf1);
+              }
+              .penguin {
+                --penguin-belly: white;
+              }
+            </style>
+
+text-align: justify; causes all lines of text except the last line to meet the left and right edges of the line box.
+The text-transform property in CSS is used to change the appearance of text.
+
+pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s).
+    button:hover {
+      color: blue;
+    }
+
+Positioning properties:
+    position
+        relative: allows you to specify how CSS should move it relative to its current position in the normal flow of the page.
+        absolute: locks the element in place relative to its parent container. (removes elem from normal flow)
+        fixed: a type of absolute positioning that locks an element relative to the browser window. (removes elem from norm flow)
+            Key difference between the fixed and absolute positions is that an element with a fixed position
+            won't move when the user scrolls.
+        h2 {
+            position: relative;
+            left: 15px;
+            bottom: 10px;
+        }
+    float
+        floating elements are removed from the normal flow of a document.
+        floating elements are pushed to either the left or right of their containing parent element.
+        commonly used with the width property to specify how much horizontal space the floated element requires.
+    z-index
+        for overlapping elements, you can set the z-index (an integer), higher number -> closer to the top of stack
+    Another positioning technique is to center a block element horizontally.
+    One way to do this is to set its margin to a value of auto.
+        div {
+            margin: auto;
+        }
+        Note: Images are inline objects by default but can be changed to block objects by setting the display field to block.
+The background property has a linear-gradient function that follows this syntax:
+    background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);
+    background: linear-gradient(35deg, #CCFFFF, #FFCCCC)
+Similarly, there is the repeating-linear-gradient() fcn
+    background: repeating-linear-gradient(
+      90deg,
+      yellow 0px,
+      blue 40px,
+      green 40px,
+      red 80px
+    );
+To use an image for the background:
+    body {
+        background: url(https://i.imgur.com/MJAkxbh.png);
+    }
+
+
 */
+:root {
+
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#prof-pic {
+    position: absolute;
+    top: -50px;
+    left: 800px;
+    max-width:100%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: 80% 0;
+    border-radius: 50%;
+    /*transition: transform .2s;*/
+}
+
+#prof-pic:hover {
+    /*transform: scale(1.5);*/
+}
+
+#contact {
+    position: relative;
+    left: 200px;
+}
+
+#email {
+    color: black;
+}
+
+#resume {
+    color: black;
+}
+
+.icon {
+    /*position: absolute;*/
+    height: 40px;
+    width: 40px;
+}
+
+#linkedin {
+    left: 50px;
+}
+
+#github {
+}
+
+#introduction {
+    position: relative;
+    top: 150px;
+}
+
+#header {
+    position: absolute;
+    background-color: #f3f4f7;
+    top: -50px;
+    width: 100%;
+    height: 250px;
+}
+
+#name {
+    position: relative;
+    left: 200px;
+    text-align: left;
+}
+
+h1 {
+    /*font-family: 'IBM Plex Sans', sans-serif;*/
+}
+
+.about-me {
+    position: relative;
+    top: 50px;
+    margin: 10px 0px 0px 0px;
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    /*border-color: rgba(0,0,0,0.2);*/
+}
+
+.resources {
+    position: relative;
+    top: 50px;
+    text-align: justify;
+}
+
+#resource-header {
+    width: 1000px;
+}
+
+#about-me-header {
+    width: 1000px;
+    /*background-color: rgba(0,0,100,0.1);*/
+}
+
+.grey-background {
+    border-radius: 10px;
+    background-color: rgba(0,0,100,.05);
+    width: 1000px;
+    padding: 10px;
+}
+
+#about-me-p {
+    margin-top: 0px;
+    text-align: justify;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.left {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+

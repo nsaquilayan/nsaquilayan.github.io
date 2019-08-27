@@ -61,14 +61,42 @@ You can apply a class to an HTML element by adding the class attribute
 <html>
     <head>
         <title>Nicholas Saquilayan's personal website</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
     </head>
     <body>
-        <a href="#bottom">Bottom of Page</a>
-        <h1>Nicholas Saquilayan</h1>
-        <h2 id="about_me_header">About Me</h2>
-            <p id="about_me">
-                About me here
-            </p>
-        <footer id="bottom">Bottom</footer>
+<!--        <a href="#bottom">Bottom of Page</a>-->
+        <div id="introduction">
+            <div id="header">
+            </div>
+            <img id="prof-pic" src="canada.jpg">
+                <h1 id="name">Nicholas Saquilayan</h1>
+                <div id="contact">
+                    <div>Email: <a id="email" href="nsaquilayan@berkeley.edu">nsaquilayan@berkeley.edu</a><br></div>
+                    <div><a id="resume" href="Nicholas_Saquilayan_Resume.pdf" target="_blank">Resume</a></div>
+    <!--                <div>Social Media:-->
+    <!--                    <a href="https://github.com/nsaquilayan"><img id="github" class="icon" src="github.jpg"></a>-->
+    <!--                    <a href="https://www.linkedin.com/in/nsaquilayan/"><img id="linkedin" class="icon" src="linkedin.png"></a>-->
+    <!--                </div>-->
+            </div>
+            <div class="about-me">
+                <h2 id="about-me-header" class="left about-me">About Me</h2>
+                <p id="about-me-p" class="about-me center grey-background">
+                    Hey, I'm Nick! I am currently a senior at UC Berkeley majoring in computer science with a passion for
+                    learning new things. When I learn something new I will provide the resources I used to help me get started.
+                </p>
+                <br>
+                <h2 id="resource-header" class="left about-me">Resources</h2>
+                <div class="resources left grey-background">
+                    HTML/CSS/JS:
+                    <strong><a href="https://www.freecodecamp.org/">freecodecamp</a></strong><br>
+                    NodeJS:
+                    <strong><a href="https://github.com/workshopper/learnyounode">learnyounode!</a></strong>
+                </div>
+            </div>
+        </div>
+        <footer id="bottom"></footer>
     </body>
 </html>
