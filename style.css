@@ -254,6 +254,10 @@ h1 {
     width: 1000px;
 }
 
+#tools-header {
+    width: 1000px;
+}
+
 #about-me-header {
     width: 1000px;
     /*background-color: rgba(0,0,100,0.1);*/
